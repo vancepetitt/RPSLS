@@ -3,7 +3,6 @@ from player import Player
 class Ai(Player):
 
     def __init__(self, name):
-        self.name = 'Computer'
-        super().__init__()
+        super().__init__(name)
 
     

@@ -5,6 +5,7 @@ class Player:
         self.wins = 0
         self.chosen_gesture = ''
         self.list_of_gestures = []
+        self.create_gestures()
     
     
     def create_gestures(self):
