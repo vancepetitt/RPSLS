@@ -28,6 +28,7 @@ class Game:
         if player == 1:
             self.player_2 = Ai('Computer')
         
+        
         if player == 2:
             print('Alright, Player Two')
             self.player_2 = Human('Player 2')
