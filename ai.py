@@ -4,5 +4,6 @@ class Ai(Player):
 
     def __init__(self, name):
         self.name = 'Computer'
+        super().__init__()
 
     
