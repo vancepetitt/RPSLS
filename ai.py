@@ -10,4 +10,4 @@ class Ai(Player):
     def choose_gesture(self):
         choice = random.randint(0,4)
         self.chosen_gesture = self.list_of_gestures[choice]
-        print(self.chosen_gesture)
+        # print(self.chosen_gesture)

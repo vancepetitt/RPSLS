@@ -1,11 +1,20 @@
 from ai import Ai
 from human import Human
 from player import Player
+import sys, time, random
+
+def print_slow(str): #Function in order for text to print slowly
+        for letter in str:
+            sys.stdout.write(letter)
+            sys.stdout.flush()
+            time.sleep(0.05)
+
+
 
 class Game:
 
     def __init__(self):
-        self.player_1 = Human('Name')
+        self.player_1 = Player('Name 1')
         self.player_2 = Player('Name 2')
 
     def play_game(self):
@@ -14,7 +23,9 @@ class Game:
         self.play_round()
 
     def display_greeting(self):
-        print('Hello Gamers.')
+        print_slow('Hello Gamers \n Welcome to Rock, Paper, Scissors, Lizard, Spock. (RPSLS)\n')
+        print_slow('The game is best 2 out of 3 \n ')
+        print_slow('The rules, as stated by Sheldon from "The Big Bang Theory":\n"Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard,\nLizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard,\nLizard eats Paper, Paper disproves Spock, Spock vaporizes rock,\nand as it always has, Rock crushes Scissors.\n"')
 
     
     
@@ -30,24 +41,18 @@ class Game:
 
             if player == '1':
                 correct_input = True
+                self.player_1 = Human('')
                 self.player_2 = Ai('Computer')
         
             elif player == '2':
                 correct_input = True
+                self.player_1 = Human('')
                 print('Alright, Player Two')
                 self.player_2 = Human('Player 2')
 
             else:
                 player = input('Sorry, only one or two players can play the game. Please enter "1" or "2": ')
 
-            
-        
-        print(self.player_1.name)
-
-        print(self.player_2.name)
-
-    
-    
     
     def compare_player_choices(self):
         if self.player_1.chosen_gesture == self.player_2.chosen_gesture:
@@ -126,3 +131,5 @@ class Game:
         for gesture in self.player_1.list_of_gestures:
             print(f'{count} to select {gesture}')
             count += 1
+
+    
