@@ -8,7 +8,7 @@ class Player:
         self.create_gestures()
     
     
-    def create_gestures(self):
+    def create_gestures(self): #function to build a gesture list for the user to grab.
 
         gesture_one = 'Rock'
         gesture_two = 'Scissors'

@@ -33,7 +33,7 @@ class Game:
     
     
     
-    def how_many_players(self):
+    def how_many_players(self): #Function in order to select how many players and gather input for name.
 
         player = input('\nEnter number of players: ')
         correct_input = False
@@ -54,7 +54,7 @@ class Game:
                 player = input('Sorry, only one or two players can play the game. Please enter "1" or "2": ')
 
     
-    def compare_player_choices(self):
+    def compare_player_choices(self): #Algorithm to solve the players choices
         if self.player_1.chosen_gesture == self.player_2.chosen_gesture:
             print('TIE')
 
@@ -103,7 +103,7 @@ class Game:
             print(f'{self.player_2.wins} win for {self.player_2.name}!')
 
         
-    def play_round(self):
+    def play_round(self): #Function to start the round.
         
         round = 1
 
@@ -127,7 +127,7 @@ class Game:
     
     
     
-    def display_winner(self):
+    def display_winner(self): #Function to display the winner that gets to 2 first
         
         if self.player_1.wins == 2:
             print(f'\n{self.player_1.name} wins!')
