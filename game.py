@@ -48,6 +48,9 @@ class Game:
     
     def play_round(self):
         self.human_show_options()
+        self.player_1.choose_gesture()
+        self.human_show_options()
+        self.player_2.choose_gesture()
 
     
     

@@ -9,8 +9,9 @@ class Human(Player):
     def user_name(self):
         self.name = input('Please enter your name: ')
 
-    # def choose_gesture(self):
-    #     choice = int(input('Please enter choice: '))
-    #     self
+    def choose_gesture(self):
+        choice = int(input('Please enter choice: '))
+        self.chosen_gesture = self.list_of_gestures[choice]
+        print(self.chosen_gesture)
 
 
