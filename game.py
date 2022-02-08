@@ -23,15 +23,24 @@ class Game:
     
     
     def how_many_players(self):
-        player = int(input('Enter amount of players: '))
 
-        if player == 1:
-            self.player_2 = Ai('Computer')
+        player = input('Enter number of players: ')
+        correct_input = False
+        while correct_input == False:
+
+            if player == '1':
+                correct_input = True
+                self.player_2 = Ai('Computer')
         
+            elif player == '2':
+                correct_input = True
+                print('Alright, Player Two')
+                self.player_2 = Human('Player 2')
 
-        if player == 2:
-            print('Alright, Player Two')
-            self.player_2 = Human('Player 2')
+            else:
+                player = input('Sorry, only one or two players can play the game. Please enter "1" or "2": ')
+
+            
         
         print(self.player_1.name)
 
@@ -90,7 +99,8 @@ class Game:
 
         
     def play_round(self):
-        while self.player_1.wins <= 2 and self.player_2.wins <= 2:  
+        
+        while self.player_1.wins < 2 and self.player_2.wins < 2:  
             
             self.human_show_options()
             self.player_1.choose_gesture()
@@ -98,11 +108,17 @@ class Game:
             self.player_2.choose_gesture()
             self.compare_player_choices()
 
+        self.display_winner()
+
     
     
     
     def display_winner(self):
-        pass
+        
+        if self.player_1.wins == 2:
+            print(f'{self.player_1.name} wins!')
+        else:
+            print(f'{self.player_2.name} wins!')
 
 
     def human_show_options(self):

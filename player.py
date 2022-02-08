@@ -21,11 +21,4 @@ class Player:
         self.list_of_gestures.append(gesture_three)
         self.list_of_gestures.append(gesture_four)
         self.list_of_gestures.append(gesture_five)
-
-    
-    
-    
-    # def choose_gesture(self):
-    #     pass
-
     
