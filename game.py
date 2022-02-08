@@ -23,9 +23,9 @@ class Game:
         self.play_round()
 
     def display_greeting(self):
-        print_slow('Hello Gamers \n Welcome to Rock, Paper, Scissors, Lizard, Spock. (RPSLS)\n')
-        print_slow('The game is best 2 out of 3 \n ')
-        print_slow('The rules, as stated by Sheldon from "The Big Bang Theory":\n"Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard,\nLizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard,\nLizard eats Paper, Paper disproves Spock, Spock vaporizes rock,\nand as it always has, Rock crushes Scissors.\n"')
+        print_slow('Hello Gamers\n\nWelcome to Rock, Paper, Scissors, Lizard, Spock. (RPSLS)\n\n')
+        print_slow('The game is best 2 out of 3\n\n')
+        print_slow('The rules, as stated by Sheldon from "The Big Bang Theory":\n"Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard,\nLizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard,\nLizard eats Paper, Paper disproves Spock, Spock vaporizes rock,\nand as it always has, Rock crushes Scissors."\n\n')
 
     
     
@@ -35,7 +35,7 @@ class Game:
     
     def how_many_players(self):
 
-        player = input('Enter number of players: ')
+        player = input('\nEnter number of players: ')
         correct_input = False
         while correct_input == False:
 
@@ -60,58 +60,67 @@ class Game:
 
         elif self.player_1.chosen_gesture == 'Rock' and self.player_2.chosen_gesture == 'Scissors':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
 
         elif self.player_1.chosen_gesture == 'Rock' and self.player_2.chosen_gesture == 'Lizard':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
 
         elif self.player_1.chosen_gesture == 'Paper' and self.player_2.chosen_gesture == 'Rock':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
         
         elif self.player_1.chosen_gesture == 'Paper' and self.player_2.chosen_gesture == 'Spock':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
 
         elif self.player_1.chosen_gesture == 'Scissors' and self.player_2.chosen_gesture == 'Paper':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
     
         elif self.player_1.chosen_gesture == 'Scissors' and self.player_2.chosen_gesture == 'Lizard':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
     
         elif self.player_1.chosen_gesture == 'Lizard' and self.player_2.chosen_gesture == 'Spock':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
 
         elif self.player_1.chosen_gesture == 'Lizard' and self.player_2.chosen_gesture == 'Paper':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
         
         elif self.player_1.chosen_gesture == 'Spock' and self.player_2.chosen_gesture == 'Rock':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
     
         elif self.player_1.chosen_gesture == 'Spock' and self.player_2.chosen_gesture == 'Scissors':
             self.player_1.wins += 1
-            print(self.player_1.wins)
+            print(f'{self.player_1.wins} win for {self.player_1.name}!')
     
         else:
             self.player_2.wins += 1
-            print(f'{self.player_2.wins} for player 2')
+            print(f'{self.player_2.wins} win for {self.player_2.name}!')
 
         
     def play_round(self):
         
+        round = 1
+
         while self.player_1.wins < 2 and self.player_2.wins < 2:  
             
+            input('Press enter to start next round.')
+            print(f'\n\n*ROUND {round}*')
+            print_slow(f'{self.player_1.name}:\n')
             self.human_show_options()
             self.player_1.choose_gesture()
+            print_slow(f'{self.player_2.name}:\n')
             self.human_show_options()
             self.player_2.choose_gesture()
+            print_slow('3..2..1..Shoot!\n')
+            print(f'{self.player_1.name} plays {self.player_1.chosen_gesture}! {self.player_2.name} plays {self.player_2.chosen_gesture}!')
             self.compare_player_choices()
+            round += 1
 
         self.display_winner()
 
@@ -121,9 +130,9 @@ class Game:
     def display_winner(self):
         
         if self.player_1.wins == 2:
-            print(f'{self.player_1.name} wins!')
+            print(f'\n{self.player_1.name} wins!')
         else:
-            print(f'{self.player_2.name} wins!')
+            print(f'\n{self.player_2.name} wins!')
 
 
     def human_show_options(self):
