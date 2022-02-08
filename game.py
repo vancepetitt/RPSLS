@@ -11,7 +11,7 @@ class Game:
     def play_game(self):
         self.display_greeting()
         self.how_many_players()
-        
+        self.play_round()
 
     def display_greeting(self):
         print('Hello Gamers.')
@@ -28,7 +28,7 @@ class Game:
         if player == 1:
             self.player_2 = Ai('Computer')
         
-        
+
         if player == 2:
             print('Alright, Player Two')
             self.player_2 = Human('Player 2')
@@ -47,10 +47,17 @@ class Game:
     
     
     def play_round(self):
-        pass
+        self.human_show_options()
 
     
     
     
     def display_winner(self):
         pass
+
+
+    def human_show_options(self):
+        count = 0
+        for gesture in self.player_1.list_of_gestures:
+            print(f'{count} to select {gesture}')
+            count += 1

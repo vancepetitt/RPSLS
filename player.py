@@ -25,7 +25,7 @@ class Player:
     
     
     
-    def choose_gesture(self):
-        pass
+    # def choose_gesture(self):
+    #     pass
 
     

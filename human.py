@@ -1,4 +1,3 @@
-from unicodedata import name
 from player import Player
 
 class Human(Player):
@@ -9,3 +8,9 @@ class Human(Player):
     
     def user_name(self):
         self.name = input('Please enter your name: ')
+
+    # def choose_gesture(self):
+    #     choice = int(input('Please enter choice: '))
+    #     self
+
+
