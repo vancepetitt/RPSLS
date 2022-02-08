@@ -41,16 +41,62 @@ class Game:
     
     
     def compare_player_choices(self):
-        pass
+        if self.player_1.chosen_gesture == self.player_2.chosen_gesture:
+            print('TIE')
 
+        elif self.player_1.chosen_gesture == 'Rock' and self.player_2.chosen_gesture == 'Scissors':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+
+        elif self.player_1.chosen_gesture == 'Rock' and self.player_2.chosen_gesture == 'Lizard':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+
+        elif self.player_1.chosen_gesture == 'Paper' and self.player_2.chosen_gesture == 'Rock':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+        
+        elif self.player_1.chosen_gesture == 'Paper' and self.player_2.chosen_gesture == 'Spock':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+
+        elif self.player_1.chosen_gesture == 'Scissors' and self.player_2.chosen_gesture == 'Paper':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
     
+        elif self.player_1.chosen_gesture == 'Scissors' and self.player_2.chosen_gesture == 'Lizard':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
     
+        elif self.player_1.chosen_gesture == 'Lizard' and self.player_2.chosen_gesture == 'Spock':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+
+        elif self.player_1.chosen_gesture == 'Lizard' and self.player_2.chosen_gesture == 'Paper':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+        
+        elif self.player_1.chosen_gesture == 'Spock' and self.player_2.chosen_gesture == 'Rock':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
     
+        elif self.player_1.chosen_gesture == 'Spock' and self.player_2.chosen_gesture == 'Scissors':
+            self.player_1.wins += 1
+            print(self.player_1.wins)
+    
+        else:
+            self.player_2.wins += 1
+            print(f'{self.player_2.wins} for player 2')
+
+        
     def play_round(self):
-        self.human_show_options()
-        self.player_1.choose_gesture()
-        self.human_show_options()
-        self.player_2.choose_gesture()
+        while self.player_1.wins <= 2 and self.player_2.wins <= 2:  
+            
+            self.human_show_options()
+            self.player_1.choose_gesture()
+            self.human_show_options()
+            self.player_2.choose_gesture()
+            self.compare_player_choices()
 
     
     
